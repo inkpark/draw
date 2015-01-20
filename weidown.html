@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>微端下载</title>
+	<link rel="stylesheet" type="text/css" href="./public/css/main.css">
+	<script type="text/javascript" src="./public/js/jquery.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="head-top">
+			<div class="top-info">
+				您好，请<a href="#">登录</a>  <a href="#">注册</a><i class="icon-line"></i><i class="icon-star"></i> 收藏网站
+			</div>
+		</div>
+		<div class="nav-content">
+			<div class="logo"></div>
+			<div class="nav">
+				<ul>
+					<li class="cur"><a href="#">首页</a></li>
+					<li><a href="#">游戏中心</a></li>
+					<li><a href="#">支付中心</a></li>
+					<li><a href="#">积分商城</a></li>
+					<li><a href="#">微端下载</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="content">
+		<div class="banner">
+			<div class="down-content">
+				<div class="tit-pic"></div>
+				<a href="#" class="down-a"></a>
+				<div class="mess">系统WinXP/Win8 大小25.00mb</div>
+				<div class="link"><a href="#">免费注册</a><a href="#">网页游戏</a></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="slider-content">
+			<div class="sli-tit">
+				<div class="tit" style="left:0">微端可玩游戏</div>
+			</div>
+			<div class="item-content">
+				<div class="slider">
+					<div class="item">
+						<div class="item-pic"><a href="#"><img src="./public/images/game-pic.jpg" /></a></div>
+						<div class="item-name"><a href="#">麻将十三章</a></div>
+						<div class="item-info"><a href="#"></a>有251024用户玩过</div>
+					</div>
+					<div class="item">
+						<div class="item-pic"><a href="#"><img src="./public/images/game-pic.jpg" /></a></div>
+						<div class="item-name"><a href="#">麻将十三章</a></div>
+						<div class="item-info"><a href="#"></a>有251024用户玩过</div>
+					</div>
+					<div class="item">
+						<div class="item-pic"><a href="#"><img src="./public/images/game-pic.jpg" /></a></div>
+						<div class="item-name"><a href="#">麻将十三章</a></div>
+						<div class="item-info"><a href="#"></a>有251024用户玩过</div>
+					</div>
+					<div class="item">
+						<div class="item-pic"><a href="#"><img src="./public/images/game-pic.jpg" /></a></div>
+						<div class="item-name"><a href="#">麻将十三章</a></div>
+						<div class="item-info"><a href="#"></a>有251024用户玩过</div>
+					</div>
+					<div class="item">
+						<div class="item-pic"><a href="#"><img src="./public/images/game-pic.jpg" /></a></div>
+						<div class="item-name"><a href="#">麻将十三章</a></div>
+						<div class="item-info"><a href="#"></a>有251024用户玩过</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="clear"></div>
+	<div class="footer">
+		<div class="webinfo"><a href="#">关于我们</a><span class="line">|</span><a href="#">关于我们</a><span class="line">|</span><a href="#">关于我们</a><br>渝IP备号</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.nav li').mouseover(function(){
+			$(this).siblings().removeClass('cur');
+			$(this).addClass('cur');
+		});
+		$('.sli-menu i').mouseover(function(){
+			var index = $(this).index();
+			$(this).siblings().removeClass('icon-cur');
+			$(this).addClass('icon-cur');
+			$('.slider').hide();
+			$('.slider').eq(index).show();
+		});
+
+	});
+</script>
+</html>

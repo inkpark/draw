@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>关于我们</title>
+	<link rel="stylesheet" type="text/css" href="./public/css/main.css">
+	<script type="text/javascript" src="./public/js/jquery.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="head-top">
+			<div class="top-info">
+				您好，请<a href="#">登录</a>  <a href="#">注册</a><i class="icon-line"></i><i class="icon-star"></i> 收藏网站
+			</div>
+		</div>
+		<div class="nav-content">
+			<div class="logo"></div>
+			<div class="nav">
+				<ul>
+					<li class="cur"><a href="#">首页</a></li>
+					<li><a href="#">游戏中心</a></li>
+					<li><a href="#">支付中心</a></li>
+					<li><a href="#">积分商城</a></li>
+					<li><a href="#">微端下载</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="content">
+		<div class="banner">
+			<div class="down-content">
+				<div class="tit-pic"></div>
+				<a href="#" class="down-a"></a>
+				<div class="mess">系统WinXP/Win8 大小25.00mb</div>
+				<div class="link"><a href="#">免费注册</a><a href="#">网页游戏</a></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--内容部分-->
+		<div class="info-main">
+			<div class="info-left">
+				<ul>
+					<a href="#"><li class="info-cur">
+						<h4>关于我们</h4>
+						<i class="i-cur"></i>
+					</li></a>
+					<a href="#"><li class="hover">
+						<h4>新闻中心</h4>
+						<i class="icon-info"></i>
+					</li></a>
+					<a href="#"><li>
+						<h4>企业文化</h4>
+						<i class="icon-info"></i>
+					</li></a>
+					<a href="#"><li>
+						<h4>联系我们</h4>
+						<i class="icon-info"></i>
+					</li></a>
+				</ul>
+			</div>
+			<div class="info-right">
+				<h2>关于我们</h2>
+				<h3>ABOUT US</h3>
+				随着互联网的发展，安全问题成为互联网不得不面临的严峻挑战。根据全球反病毒产品测试中心（AV-Test.com）的数据，在1998年，安全厂商共收集到1,738种新特征的威胁样本。而在十年后的2008年，全球新增木马、病毒等恶意程序的数量超过千万，超过此前十年所有恶意程序总和。2009年7月4日，微软Mpeg-2漏洞引发的木马疫情开始集中爆发，国内每天超过2万个网站被黑客挂马，数量接近网站总数的百分之一。
+
+在中国，流氓软件在2005年-2006年期间一度非常泛滥，严重影响到网民的利益。同时，随着互联网的发展，以谋取不法利益的木马地下产业链也获得快速发展，钓鱼欺诈网站等新型的不法行为也急剧增长。在互联网时代，网络安全不再仅仅是病毒。基于PC时代的安全理念已经越来越不适应互联网时代的发展。同样，随着互联网安全威胁的多元化，传统的网络安全模式难以为网民提供满意的安全保障，基于云计算的“云安全”模式势在必行。
+
+360自2006年7月问世以来，用了五年时间，以颠覆式创新的模式，重新定义了互联网安全，改写了安全市场格局。
+
+第一是商业模式的颠覆。360是免费安全的首倡者，主张安全作为互联网的基础服务，应该彻底免费；第二是安全技术的颠覆。360具有深厚的搜索引擎技术积累，将这些技术应用于安全领域，建成了目前为止规模、用户数、使用量均处于领先地位的云安全系统；第三，也是最重要的颠覆，是360用全新的用户体验重新定义了互联网安全。安全不等于杀病毒，在互联网时代它还意味着数据安全、隐私安全、账号安全、下载安全，以及电脑健康。
+			</div>
+		</div>
+		<!--内容部分结束-->
+	</div>
+	<div class="clear"></div>
+	<div class="footer">
+		<div class="webinfo"><a href="#">关于我们</a><span class="line">|</span><a href="#">关于我们</a><span class="line">|</span><a href="#">关于我们</a><br>渝IP备号</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.nav li').mouseover(function(){
+			$(this).siblings().removeClass('cur');
+			$(this).addClass('cur');
+		});
+		$('.info-left li').mouseover(function(){
+			$('.info-left li').removeClass('hover');
+			$(this).addClass('hover');
+		});
+		$('.info-left li').mouseleave(function(){
+			$('.info-left li').removeClass('hover');
+		});
+	});
+</script>
+</html>

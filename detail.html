@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>游戏详情</title>
+	<link rel="stylesheet" type="text/css" href="./public/css/main.css">
+	<script type="text/javascript" src="./public/js/jquery.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="head-top">
+			<div class="top-info">
+				您好，请<a href="#">登录</a>  <a href="#">注册</a><i class="icon-line"></i><i class="icon-star"></i> 收藏网站
+			</div>
+		</div>
+		<div class="nav-content">
+			<div class="logo"></div>
+			<div class="nav">
+				<ul>
+					<li class="cur"><a href="#">首页</a></li>
+					<li><a href="#">游戏中心</a></li>
+					<li><a href="#">支付中心</a></li>
+					<li><a href="#">积分商城</a></li>
+					<li><a href="#">微端下载</a></li>
+					<li><a href="#">关于我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="content">
+		<!--详情主体-->
+		<div class="urhere">
+			<i class="icon-home"></i>首页<i class="icon-arrow"></i>游戏中心<i class="icon-arrow"></i>游戏详情
+		</div>
+		<div class="detail">
+			<div class="detail-left">
+				<ul> 
+					<h3>棋牌游戏</h3>
+					<li class="list-curr">
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+				</ul>
+				<ul> 
+					<h3>棋牌游戏</h3>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+				</ul>
+				<ul> 
+					<h3>棋牌游戏</h3>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+				</ul>
+				<ul> 
+					<h3>棋牌游戏</h3>
+					<li >
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+					<li>
+						<img src="./public/images/game-small.png"><a href="#">麻将十三章</a>
+					</li>
+				</ul>
+			</div>
+			<div class="detail-right">
+				<div class="detail-info">
+					<h1>麻将13张</h1>
+					<img src="./public/images/gcimg.png">
+					<span>分类 : 棋牌</span>
+					<span>版本 : v2.1215</span>
+					<span>系统 : windowsXP</span>
+					<span>大小 : 10mb</span>
+					<span>更新日期 : 2014-12-11</span>
+					<a class="gd-down" href="#"></a>
+				</div>
+				<div class="detail-des">
+					<h2>游戏介绍</h2>
+					<div class="cont">
+					廣東十三張麻將是最早也最多人喜愛的麻將。它的基本規則與十六張的台灣麻將大同小異，但是在算台（番）數時，多了非常多的變化，因此使遊戲的刺激度提高了許多。這裡，我們就要向您介紹廣東十三張麻將的特有規則及台（番）數的算法，祝您玩的愉快！！！
+
+廣東麻將在開始時，以莊家為東風，莊家的右手邊圍南風，對門為西風，左手邊為北風。這個劃分在此種麻將中非常重要，在算台（番）數時會一一解釋。起手時，莊家可拿十四張牌，其他三家十三張，由莊家起打。胡牌時必須有手中的十三張牌加上一張所聽的牌
+					</div>
+					<img src="./public/images/detail.png">
+				</div>
+			</div>
+		</div>
+		<!--详情主体结束-->
+	</div>
+	<div class="clear"></div>
+	<div class="footer">
+		<div class="webinfo"><a href="#">关于我们</a><span class="line">|</span><a href="#">关于我们</a><span class="line">|</span><a href="#">关于我们</a><br>渝IP备号</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.nav li').mouseover(function(){
+			$(this).siblings().removeClass('cur');
+			$(this).addClass('cur');
+		});
+		$('.detail-left li').mouseover(function(){
+			$('.detail-left li').removeClass('list-curr');
+			$(this).addClass('list-curr');
+		});
+	});
+</script>
+</html>

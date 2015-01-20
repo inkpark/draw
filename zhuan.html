@@ -1,0 +1,242 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>js抽奖转盘代码特效 - 在线演示-B5教程网 bcty365</title>
+
+
+<style>
+	*{padding:0;margin:0}
+	body{
+		text-align:center;
+		background-color:#c71a1a;
+	}
+	.ly-plate{
+		position:relative;
+		width:509px;
+		height:509px;
+		/*margin: 50px auto;*/
+		background:#9c1515;
+		border-radius:400px;
+		float:left;
+	}
+	.rotate-bg{
+		width:533px;
+		height:534px;
+		background:url(public/images/zhuanpan.png);
+		position:absolute;
+		top:0;
+		left:0
+	}
+	.ly-plate div.lottery-star{
+		width:157px;
+		height:182px;
+		position:absolute;
+		top:171px;
+		left:189px;
+		/*text-indent:-999em;
+		overflow:hidden;
+		background:url(rotate-static.png);
+		-webkit-transform:rotate(0deg);*/
+		outline:none
+	}
+	.ly-plate div.lottery-star #lotteryBtn{
+		cursor: pointer;
+		position: absolute;
+		top:0;
+		left:0;
+		*left:-107px
+	}
+	.dst{
+		width:480px;
+		height:200px;
+		background:#fff;
+		position:fixed;
+		top:40%;
+		left:50%;
+		margin:-100px 0 0 -255px;
+		display:none;
+		padding:50px 15px 15px 15px;
+		text-align:left;
+		border:solid 2px #ffd889;
+		box-shadow:0 0 15px #ce9d39;
+		background:#fffad1;
+	}
+</style>
+<style>
+img{border:0;}
+.titme{
+	position:absolute;
+	top:0;
+	left:180px;
+}
+li{list-style:none;}
+.uername{float:left; width:260px;}
+.yh{float:right;}
+.yh{float:right;}
+#listbox{
+	height:150px; 
+	overflow:hidden; 
+	padding:10px;
+}
+#listbox li{height:24px; line-height:24px; padding-bottom:5px; margin-bottom:5px; border-bottom:solid 1px #ccc; position:relative; text-align:left;}
+#listbox li img{margin-left:5px;}
+#listbox_copymsgid li{list-style:none;}
+
+.listbox{background:#ffffe6; margin-right:15px;}
+  .listbox h1{font-size:1.8em; padding:10px 0; margin-bottom:5px; font-family:"微软雅黑"; text-align:center;}
+  .lis{
+	  height:200px;
+	  overflow:hidden;
+	  border:solid 1px #ccc;
+	  padding:5px;
+  }
+  .red{color:#fff552;}
+  .buyBottom{
+	  background:#085040;
+	  height:90px;
+	  padding:10px;
+	  position:fixed;
+	  _position:relative;
+	  bottom:0;
+	  left:50%;
+	  margin-left:-500px;
+	  width:980px;
+  }
+  .buyBottom h1{display:inline; float:left; margin-left:50px; font-size:2.2em; width:600px; text-align:left; padding-top:10px; color:#fff; font-weight:600;}
+  .buyBottom h1 span{
+	  font-size:20px;
+	  line-height:35px;
+  }
+  .buyBottom a{float:right; display:inline; margin-right:50px;}
+  .buyBottom a img{vertical-align:middle;}
+</style>
+</head>
+<body>
+<style>
+ul#bcty365_nav{padding-left:50px; margin-bottom:10px; border-bottom:2px solid #ccc; overflow:hidden; _zoom:1;}
+ul#bcty365_nav li{float:left; display:inline; margin:10px;}
+ul#bcty365_nav li a{display:block;color:#FFFFFF; font-size:16px;}
+ul#bcty365_nav li a,#wimoban_p,#wimoban_p a{ font-family:"微软雅黑";}
+ul#bcty365_nav li a:hover,#wimoban_p a:hover{color:red;}
+</style>	
+
+    <div style="width:1000px; height:510px; padding-top:5px; margin:auto;">
+	<div class="ly-plate">
+		<div class="rotate-bg" id="lotteryBtn2"></div>
+		<div class="lottery-star"><img src="public/images/z-pointer.png" id="lotteryBtn"></div>
+	</div>
+
+    </div>
+
+  
+</body>
+<script src="cj/jquery-1.7.2.min.js"></script>
+<script src="cj/jQueryRotate.2.2.js"></script>
+<script src="cj/jquery.easing.min.js"></script>
+
+<script>
+$(function(){
+	var timeOut = function(){  //超时函数
+		$("#lotteryBtn").rotate({
+			angle:0, 
+			duration: 10000, 
+			animateTo: 2160, //这里是设置请求超时后返回的角度，所以应该还是回到最原始的位置，2160是因为我要让它转6圈，就是360*6得来的
+			callback:function(){
+				alert('亲！没有中奖哦！！')
+			}
+		}); 
+	}; 
+	var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+		$('#lotteryBtn2').stopRotate();
+		$("#lotteryBtn2").rotate({
+			angle:0, 
+			duration: 5000, 
+			animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+			callback:function(){
+				alert(text)
+				//setTimeout("top.location.href='http://fuwu.taobao.com/ser/assembleParam.htm?spm=a1z2j.6989585.0.0.o9dyAn&tracelog=qianniu&subParams=itemCode:FW_GOODS-1884032-1,cycleNum:7,cycleUnit:3,freeTry:1;'",5000);
+			}
+		}); 
+	};
+
+
+
+	$("#lotteryBtn").rotate({ 
+	   bind: 
+		 { 
+            click: function(){
+                $.get(
+                    '/api/draw.php',
+                    '',
+                    function(res){
+                        if (res.status == 0) {
+                            var data;
+                            var id = res.info.p_id;
+                            var p_name = res.info.p_name;
+                            switch(id){
+                                case "1":
+                                    rotateFunc(1,20,p_name);
+                                    break;
+                                case "2":
+                                    rotateFunc(2,220,p_name);
+                                    break;
+                                case "3":
+                                    rotateFunc(2,180,p_name);
+                                    break;
+                                case "4":
+                                    data = [1,2]; //返回的数组
+                                    data = data[Math.floor(Math.random()*data.length)];
+                                    if(data==1){
+
+                                        rotateFunc(4,300,p_name)
+                                    }
+                                    if(data==2){
+
+                                        rotateFunc(4,100,p_name)
+                                    }
+                                 
+                                    break;
+                                case "5":
+                                    data = [1,2]; //返回的数组
+                                    data = data[Math.floor(Math.random()*data.length)];
+                                    if(data==1){
+
+                                        rotateFunc(5,60,p_name)
+                                    }
+                                    if(data==2){
+
+                                        rotateFunc(5,140,p_name)
+                                    }
+                                    break;
+
+                                case "6":
+                                    data = [1,2]; //返回的数组
+                                    data = data[Math.floor(Math.random()*data.length)];
+                                    if(data==1){
+
+                                        rotateFunc(6,340,p_name)
+                                    }
+                                    if(data==2){
+
+                                        rotateFunc(6,260,p_name)
+                                    }
+                                    break;
+                                default :
+                                    timeOut();
+                                    break;
+                            }
+                        } else {
+                                alert(res.message);
+                        };
+                    },"json"
+                );
+			}
+		 } 
+	   
+	});
+	
+})
+</script>
+</html>
