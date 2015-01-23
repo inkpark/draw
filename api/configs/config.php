@@ -6,8 +6,8 @@ $config = array(
     'DBName'     => 'poker',
     'ServiceCode'   => 'xxxx',
     'SecretKey' => 'xxxxxxx',
-    'ADD_MONEY_URL' => 'http://yandui-lb2.chinacloudapp.cn/ClubOnemoney/api/MemberWallet/AddMoneyInterface',
-    'RED_MONEY_URL' => 'http://yandui-lb2.chinacloudapp.cn/ClubOnemoney/api/MemberWallet/ReduceMoneyInterface',
+    'ADD_MONEY_URL' => 'zzzzzzzzzzzzzz',
+    'RED_MONEY_URL' => 'zzzzzzzzzzz',
 );
 
 foreach ($config as $k => $val) {
